@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chessboard Grid with * and #</title>
+  <style>
+    label {
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    // ✅ User Story 1: Create print(data) function
+    function print(data) {
+      const label = document.createElement("label");
+      label.innerText = data;
+      document.body.appendChild(label);
+    }
+
+    // ✅ User Story 2: Create newLine() function
+    function newLine() {
+      const br = document.createElement("br");
+      document.body.appendChild(br);
+    }
+
+    // ✅ User Story 3: Declare board_size
+    const board_size = 8;  // You can change the size if needed
+
+    // ✅ User Story 4: Create chessboard grid
+    for (let i = 0; i < board_size; i++) {
+      for (let j = 0; j < board_size; j++) {
+        // Use "*" and "#" in a checker pattern
+        const cell = (i + j) % 2 === 0 ? "*" : "#";
+        print(cell);
+      }
+      newLine();
+    }
+  </script>
+
+</body>
+</html>
